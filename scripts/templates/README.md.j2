@@ -107,8 +107,9 @@ Each Image will be built with a `rolling` tag, along with tags specific to it's 
 
 Container | Channel | Image
 --- | --- | ---
-[projector-pycharm](https://github.com/default_owner/containers/pkgs/container/projector-pycharm) | stable | ghcr.io/default_owner/projector-pycharm
-
+{% for image in app_images | sort(attribute="name") -%}
+[{{ image.name }}]({{ image.html_url }}) | {{ image.channel }} | ghcr.io/{{ image.owner }}/{{ image.name }}
+{% endfor %}
 
 ## Deprecations
 
