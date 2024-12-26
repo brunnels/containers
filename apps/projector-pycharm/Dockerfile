@@ -1,7 +1,7 @@
 FROM busybox as gpg
 RUN wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O /tmp/ACCC4CF8.asc
 
-FROM python:3.12-slim-bookworm as base
+FROM python:3.13-slim-bookworm as base
 COPY --from=gpg /tmp/ACCC4CF8.asc /etc/apt/trusted.gpg.d/pgdg.asc
 
 RUN export DEBIAN_FRONTEND=noninteractive \
