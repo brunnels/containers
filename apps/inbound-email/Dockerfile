@@ -1,8 +1,6 @@
 ARG NODE_VERSION=22.13.1
 ARG VERSION
 
-LABEL org.opencontainers.image.source="https://github.com/softbounce/inbound-email"
-
 FROM node:${NODE_VERSION}-alpine
 
 ENV NODE_ENV="production" \
@@ -22,3 +20,4 @@ RUN git clone https://github.com/softbounce/inbound-email.git . \
 USER node
 EXPOSE 2525
 CMD node server.js
+LABEL org.opencontainers.image.source="https://github.com/softbounce/inbound-email"
