@@ -16,7 +16,7 @@ RUN apk add --no-cache --virtual=.build-deps git \
       NUMBER_COMMITS_TO_REVERT=$(( $(git rev-list --count --first-parent HEAD) - $(echo "${VERSION}" | cut -d "." -f3) )); \
       git checkout "master~${NUMBER_COMMITS_TO_REVERT}"; \
     fi \
- && npm ci --omit=dev \
+ && npm install --omit=dev \
  && chown -R root:root /app && chmod -R 755 /app \
  && apk del --purge .build-deps \
  && rm -rf /root/.cache /root/.cargo /tmp/*
