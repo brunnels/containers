@@ -107,8 +107,8 @@ Each Image will be built with a `rolling` tag, along with tags specific to it's 
 
 Container | Channel | Image
 --- | --- | ---
+[coder-projector-pycharm](https://github.com/brunnels/containers/pkgs/container/coder-projector-pycharm) | stable | ghcr.io/brunnels/coder-projector-pycharm
 [inbound-email](https://github.com/brunnels/containers/pkgs/container/inbound-email) | stable | ghcr.io/brunnels/inbound-email
-[projector-pycharm](https://github.com/brunnels/containers/pkgs/container/projector-pycharm) | stable | ghcr.io/brunnels/projector-pycharm
 
 
 ## Deprecations
