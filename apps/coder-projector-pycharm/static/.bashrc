@@ -11,3 +11,12 @@ if [ ! -f "$HOME/.inputrc" ] ; then
     echo 'set show-all-if-ambiguous on' >> "$HOME/.inputrc"
     echo 'set completion-ignore-case on' >> "$HOME/.inputrc"
 fi
+
+# just going to assume if kubecolor is installed then kubectl is too
+if [ -x "$(command -v kubecolor)" ]; then
+    alias kubectl="kubecolor"
+    alias k="kubecolor"
+    source <(kubectl completion bash)
+    complete -o default -F __start_kubectl kubecolor
+    complete -o default -F __start_kubectl k
+fi
