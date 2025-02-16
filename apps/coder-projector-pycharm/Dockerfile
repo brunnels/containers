@@ -4,9 +4,9 @@ ENV DEBIAN_FRONTEND=noninteractive \
     TERM=xterm
 
 # upgrade and add certs
-RUN apt-get update && \
-    apt-get upgrade --yes --no-install-recommends --no-install-suggests && \
-    apt-get install --yes --no-install-recommends --no-install-suggests ca-certificates curl
+RUN apt-get update 1>/dev/null && \
+    apt-get -qq upgrade --yes --no-install-recommends --no-install-suggests 1>/dev/null && \
+    apt-get -qq install --yes --no-install-recommends --no-install-suggests ca-certificates curl 1>/dev/null
 
 # add docker repo
 RUN install -d /usr/share/docker-archive/docker \
@@ -25,26 +25,26 @@ RUN install -d /usr/share/postgresql-common/pgdg \
 RUN echo "deb http://deb.debian.org/debian $(. /etc/os-release; echo $VERSION_CODENAME)-backports main" > /etc/apt/sources.list.d/debian-backports.list
 
 #install packages
-RUN apt-get update \
- && apt-get install -y --no-install-recommends --no-install-suggests apt-transport-https apt-utils bash bash-completion \
+RUN apt-get update 1>/dev/null \
+ && apt-get -qq install -y --no-install-recommends --no-install-suggests apt-transport-https apt-utils bash bash-completion \
     build-essential containerd.io dnsutils docker-buildx-plugin docker-ce docker-ce-cli docker-compose-plugin \
     dumb-init gnupg htop inetutils-ping jq libffi-dev libfontconfig1 libfreetype6 libldap2-dev libpq-dev libpq5 libsasl2-dev \
     libsecret-1-0 libssl-dev libxi6 libxml2-dev libxrender1 libxslt1-dev libxss1 libxtst6 locales man net-tools \
     postgresql-client-16 postgresql-client-17 postgresql-client-common procps rsync shellcheck \
-    software-properties-common sudo systemd systemd-sysv unzip vim wget whiptail xsltproc \
- && apt-get install -y -t "$(. /etc/os-release; echo $VERSION_CODENAME)-backports" git \
+    software-properties-common sudo systemd systemd-sysv unzip vim wget whiptail xsltproc 1>/dev/null \
+ && apt-get -qq install -y -t "$(. /etc/os-release; echo $VERSION_CODENAME)-backports" git 1>/dev/null \
  && rm -rf /var/lib/apt/lists/* \
  && rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin \
  && rm -rf ~/.cache
 
 # Enables Docker starting with systemd
-RUN systemctl enable docker
+RUN systemctl enable docker 1>/dev/null
 
 # Create a symlink for standalone docker-compose usage
 RUN ln -s /usr/libexec/docker/cli-plugins/docker-compose /usr/bin/docker-compose
 
 # Generate the desired locale (en_US.UTF-8)
-RUN locale-gen en_US.UTF-8
+RUN locale-gen en_US.UTF-8 1>/dev/null
 
 # add user
 RUN useradd coder \
