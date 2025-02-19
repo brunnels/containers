@@ -18,7 +18,7 @@ RUN apk add --no-cache bash curl ca-certificates findutils geoip p7zip python3 \
 
 RUN mkdir -p /app
 # renovate: datasource=github-releases depName=a8m/envsubst
-ENV ENVSUBST_VERSION=v1.4.2
+ENV ENVSUBST_VERSION="v1.4.2"
 RUN curl -L https://github.com/a8m/envsubst/releases/download/${ENVSUBST_VERSION}/envsubst-$(uname -s)-$(uname -m) -o /app/envsubst \
     && chmod +x /app/envsubst
 
