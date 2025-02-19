@@ -5,7 +5,7 @@ test -f "/scripts/umask.sh" && source "/scripts/umask.sh"
 test -f "/scripts/vpn.sh" && source "/scripts/vpn.sh"
 
 # Update settings.json with environment variables
-envsubst < /app/settings.json.tmpl > /config/settings.json
+/app/envsubst < /app/settings.json.tmpl > /config/settings.json
 
 if [[ "${TRANSMISSION__DEBUG}" == "true" ]]; then
     echo "Transmission starting with the following configuration..."
