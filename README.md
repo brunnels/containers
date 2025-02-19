@@ -109,6 +109,7 @@ Container | Channel | Image
 --- | --- | ---
 [coder-projector-pycharm](https://github.com/brunnels/containers/pkgs/container/coder-projector-pycharm) | stable | ghcr.io/brunnels/coder-projector-pycharm
 [inbound-email](https://github.com/brunnels/containers/pkgs/container/inbound-email) | stable | ghcr.io/brunnels/inbound-email
+[transmission](https://github.com/brunnels/containers/pkgs/container/transmission) | stable | ghcr.io/brunnels/transmission
 
 
 ## Deprecations
