@@ -109,6 +109,9 @@ Container | Channel | Image
 --- | --- | ---
 [coder-projector-pycharm](https://github.com/brunnels/containers/pkgs/container/coder-projector-pycharm) | stable | ghcr.io/brunnels/coder-projector-pycharm
 [inbound-email](https://github.com/brunnels/containers/pkgs/container/inbound-email) | stable | ghcr.io/brunnels/inbound-email
+[lidarr](https://github.com/brunnels/containers/pkgs/container/lidarr) | master | ghcr.io/brunnels/lidarr
+[lidarr-develop](https://github.com/brunnels/containers/pkgs/container/lidarr-develop) | develop | ghcr.io/brunnels/lidarr-develop
+[lidarr-nightly](https://github.com/brunnels/containers/pkgs/container/lidarr-nightly) | nightly | ghcr.io/brunnels/lidarr-nightly
 [transmission](https://github.com/brunnels/containers/pkgs/container/transmission) | stable | ghcr.io/brunnels/transmission
 
 
