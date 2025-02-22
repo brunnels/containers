@@ -272,6 +272,7 @@ jobs:
           ${{ toJSON(matrix.image.platforms) }}
           EOF
           )
+          mkdir -p /tmp/${{ matrix.image.name }}/digests
           ACTUAL_COUNT=$(ls -1 /tmp/${{ matrix.image.name }}/digests | wc -l)
           if [[ $EXPECTED_COUNT != $ACTUAL_COUNT ]]; then
               echo "Expected $EXPECTED_COUNT platforms, but only found $ACTUAL_COUNT"
