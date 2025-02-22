@@ -46,7 +46,7 @@ RUN \
     && \
     rm -rf /app/bin/Lidarr.Update /app/bin/fpcalc \
     && \
-    printf "UpdateMethod=docker\nBranch=%s\nPackageVersion=%s\nPackageAuthor=[rafaribe](https://github.com/rafaribe)\n" "${LIDARR__UPDATE__BRANCH}" "${VERSION}" > /app/package_info \
+    printf "UpdateMethod=docker\nBranch=%s\nPackageVersion=%s\nPackageAuthor=[brunnels](https://github.com/brunnels)\n" "${LIDARR__UPDATE__BRANCH}" "${VERSION}" > /app/package_info \
     && chown -R root:root /app \
     && chmod -R 755 /app \
     && rm -rf /tmp/*
