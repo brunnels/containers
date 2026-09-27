@@ -10,8 +10,8 @@ on:
       - .github/labels.yaml
       - .github/workflows/label-sync.yaml
       - apps/**
-  schedule:
-    - cron: "0 0 * * *" # Every day at midnight
+  # schedule:
+  #   - cron: "0 0 * * *" # Every day at midnight
 
 jobs:
   label-sync:
